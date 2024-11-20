@@ -10,6 +10,7 @@ import Image from "next/image";
 import js from "@/public/assets/reactjs.jpg";
 import ts from "@/public/assets/ts.jpg";
 import nest from "@/public/assets/nest.jpg";
+import fundo from "@/public/assets/povo.jpg";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -116,7 +117,7 @@ export default function Home() {
         <section className="relative py-24 md:py-32">
           <div className="absolute inset-0 overflow-hidden">
             <Image
-              src={require("@/public/assets/povo.jpg")}
+              src={fundo.src}
               alt="Background"
               layout="fill"
               objectFit="cover"
