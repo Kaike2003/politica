@@ -5,112 +5,176 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Users, Leaf, Scale } from "lucide-react";
-import Image from "next/image";
+import { Users, Leaf, Scale, Building, Send, Menu, X } from "lucide-react";
 
 export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você adicionaria a lógica para enviar o formulário
     console.log("Formulário enviado:", { name, email, message });
-    // Limpar o formulário após o envio
     setName("");
     setEmail("");
     setMessage("");
   };
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="bg-green-600 text-white py-4">
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <header className="bg-blue-600 text-white py-4 sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center">
             <a href="#" className="text-2xl font-bold">
               União Progressista
             </a>
-            <div className="space-x-4">
-              <a href="#sobre" className="hover:underline">
+            <div className="hidden md:flex space-x-6">
+              <a
+                href="#sobre"
+                className="hover:text-blue-200 transition duration-300"
+              >
                 Sobre
               </a>
-              <a href="#causas" className="hover:underline">
+              <a
+                href="#causas"
+                className="hover:text-blue-200 transition duration-300"
+              >
                 Causas
               </a>
-              <a href="#equipe" className="hover:underline">
+              <a
+                href="#equipe"
+                className="hover:text-blue-200 transition duration-300"
+              >
                 Equipe
               </a>
-              <a href="#contato" className="hover:underline">
+              <a
+                href="#contato"
+                className="hover:text-blue-200 transition duration-300"
+              >
                 Contato
               </a>
             </div>
+            <Button
+              className="md:hidden"
+              variant="ghost"
+              size="icon"
+              onClick={toggleMenu}
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </Button>
           </nav>
         </div>
       </header>
 
+      {isMenuOpen && (
+        <div className="md:hidden bg-white shadow-lg absolute top-16 left-0 right-0 z-40">
+          <nav className="flex flex-col p-4">
+            <a
+              href="#sobre"
+              className="py-2 hover:text-blue-600 transition duration-300"
+              onClick={toggleMenu}
+            >
+              Sobre
+            </a>
+            <a
+              href="#causas"
+              className="py-2 hover:text-blue-600 transition duration-300"
+              onClick={toggleMenu}
+            >
+              Causas
+            </a>
+            <a
+              href="#equipe"
+              className="py-2 hover:text-blue-600 transition duration-300"
+              onClick={toggleMenu}
+            >
+              Equipe
+            </a>
+            <a
+              href="#contato"
+              className="py-2 hover:text-blue-600 transition duration-300"
+              onClick={toggleMenu}
+            >
+              Contato
+            </a>
+          </nav>
+        </div>
+      )}
+
       <main className="flex-grow">
-        <section className="bg-blue-500 text-white py-20">
+        <section className="bg-blue-600 text-white py-24 md:py-32">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Bem-vindo à União Progressista
             </h1>
-            <p className="text-xl mb-8">
-              Juntos por um futuro mais justo e sustentável
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Juntos, construímos um futuro mais justo, igualitário e
+              sustentável para todos.
             </p>
-            <Button className="bg-green-500 hover:bg-green-600 text-white">
+            <Button className="bg-white text-blue-600 hover:bg-blue-50 transition duration-300">
               Junte-se a nós
             </Button>
           </div>
         </section>
 
-        <section id="sobre" className="py-16 bg-white">
+        <section id="sobre" className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center text-green-700">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-blue-600">
               Nossa Missão
             </h2>
-            <p className="text-lg text-center max-w-2xl mx-auto">
-              A União Progressista está comprometida em construir uma sociedade
-              mais justa, igualitária e sustentável. Acreditamos no poder da
-              ação coletiva e na importância de políticas baseadas em evidências
-              para enfrentar os desafios do nosso tempo.
+            <p className="text-lg text-center max-w-3xl mx-auto text-gray-700 leading-relaxed">
+              A União Progressista está empenhada em criar uma sociedade mais
+              justa, igualitária e sustentável. Acreditamos no poder da ação
+              coletiva e na importância de políticas baseadas em evidências para
+              enfrentar os desafios complexos do nosso tempo, promovendo um
+              futuro melhor para todas as gerações.
             </p>
           </div>
         </section>
 
-        <section id="causas" className="py-16 bg-gray-100">
+        <section id="causas" className="py-20 bg-green-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center text-green-700">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700">
               Nossas Principais Causas
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   title: "Justiça Social",
-                  icon: <Scale className="h-12 w-12 text-blue-500 mb-4" />,
+                  icon: <Scale className="h-12 w-12 text-green-600 mb-4" />,
                   description:
-                    "Lutamos por igualdade de oportunidades e direitos para todos os cidadãos.",
+                    "Lutamos por igualdade de oportunidades e direitos para todos os cidadãos, combatendo todas as formas de discriminação.",
                 },
                 {
                   title: "Sustentabilidade",
-                  icon: <Leaf className="h-12 w-12 text-green-500 mb-4" />,
+                  icon: <Leaf className="h-12 w-12 text-green-600 mb-4" />,
                   description:
-                    "Promovemos políticas ambientais para um futuro sustentável e saudável.",
+                    "Promovemos políticas ambientais para um futuro sustentável, focando em energias renováveis e conservação.",
                 },
                 {
                   title: "Educação para Todos",
-                  icon: <Users className="h-12 w-12 text-blue-500 mb-4" />,
+                  icon: <Users className="h-12 w-12 text-green-600 mb-4" />,
                   description:
-                    "Defendemos o acesso universal à educação de qualidade.",
+                    "Defendemos o acesso universal à educação de qualidade, investindo no futuro de nossa nação.",
                 },
               ].map((causa, index) => (
-                <Card key={index} className="text-center p-6">
-                  <CardContent>
+                <Card
+                  key={index}
+                  className="text-center p-6 hover:shadow-lg transition duration-300 bg-white"
+                >
+                  <CardContent className="flex flex-col items-center">
                     {causa.icon}
-                    <h3 className="text-xl font-semibold mb-2">
+                    <h3 className="text-xl font-semibold mb-2 text-green-700">
                       {causa.title}
                     </h3>
-                    <p>{causa.description}</p>
+                    <p className="text-gray-600">{causa.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -118,9 +182,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="equipe" className="py-16 bg-white">
+        <section id="equipe" className="py-20 bg-blue-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center text-green-700">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-700">
               Nossa Equipe
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -128,30 +192,35 @@ export default function Home() {
                 {
                   name: "Maria Silva",
                   role: "Presidente",
-                  image: "https://picsum.photos/800/800?blur=2",
+                  image: "/placeholder.svg?height=200&width=200",
                 },
                 {
                   name: "João Santos",
                   role: "Diretor de Políticas",
-                  image: "https://picsum.photos/800/800?blur=2",
+                  image: "/placeholder.svg?height=200&width=200",
                 },
                 {
                   name: "Ana Oliveira",
                   role: "Coordenadora de Campanhas",
-                  image: "https://picsum.photos/800/800?blur=2",
+                  image: "/placeholder.svg?height=200&width=200",
                 },
               ].map((membro, index) => (
-                <Card key={index} className="text-center">
-                  <CardContent className="pt-6">
-                    <Image
+                <Card
+                  key={index}
+                  className="text-center overflow-hidden hover:shadow-xl transition duration-300 bg-white"
+                >
+                  <CardContent className="p-0">
+                    <img
                       src={membro.image}
                       alt={membro.name}
-                      className="rounded-full mx-auto mb-4"
-                      width={150}
-                      height={150}
+                      className="w-full h-48 object-cover"
                     />
-                    <h3 className="text-xl font-semibold">{membro.name}</h3>
-                    <p className="text-gray-600">{membro.role}</p>
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold text-blue-600">
+                        {membro.name}
+                      </h3>
+                      <p className="text-gray-600">{membro.role}</p>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -159,12 +228,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contato" className="py-16 bg-blue-50">
+        <section id="contato" className="py-20 bg-green-600 text-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center text-green-700">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
               Entre em Contato
             </h2>
-            <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+            <form
+              onSubmit={handleSubmit}
+              className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg"
+            >
               <div className="mb-4">
                 <Input
                   type="text"
@@ -172,6 +244,7 @@ export default function Home() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
+                  className="bg-gray-50"
                 />
               </div>
               <div className="mb-4">
@@ -181,6 +254,7 @@ export default function Home() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  className="bg-gray-50"
                 />
               </div>
               <div className="mb-4">
@@ -189,11 +263,12 @@ export default function Home() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
+                  className="bg-gray-50"
                 />
               </div>
               <Button
                 type="submit"
-                className="w-full bg-green-500 hover:bg-green-600 text-white"
+                className="w-full bg-green-600 hover:bg-green-700 text-white transition duration-300"
               >
                 Enviar Mensagem
               </Button>
@@ -202,14 +277,14 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-green-600 text-white py-8">
+      <footer className="bg-blue-800 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2024 União Progressista. Todos os direitos reservados.</p>
           <div className="mt-4 space-x-4">
-            <a href="#" className="hover:underline">
+            <a href="#" className="hover:text-blue-300 transition duration-300">
               Política de Privacidade
             </a>
-            <a href="#" className="hover:underline">
+            <a href="#" className="hover:text-blue-300 transition duration-300">
               Termos de Uso
             </a>
           </div>
