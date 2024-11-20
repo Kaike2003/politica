@@ -16,9 +16,6 @@ import {
   HandHeart,
 } from "lucide-react";
 import Image from "next/image";
-import js from "@/public/assets/reactjs.jpg";
-import ts from "@/public/assets/ts.jpg";
-import nest from "@/public/assets/nest.jpg";
 import fundo from "@/public/assets/povo.jpg";
 import presidente from "@/public/assets/presidente.jpg";
 import diretor from "@/public/assets/diretor.jpg";
