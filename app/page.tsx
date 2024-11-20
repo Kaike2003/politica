@@ -14,6 +14,8 @@ import {
   Megaphone,
   FileText,
   HandHeart,
+  Calendar,
+  BookOpen,
 } from "lucide-react";
 import Image from "next/image";
 import diretor from "@/public/assets/diretor.jpg";
@@ -63,6 +65,12 @@ export default function Home() {
                 className="hover:text-blue-200 transition duration-300"
               >
                 Causas
+              </a>
+              <a
+                href="#servicos"
+                className="hover:text-blue-200 transition duration-300"
+              >
+                Serviços
               </a>
               <a
                 href="#equipe"
@@ -116,6 +124,13 @@ export default function Home() {
               onClick={toggleMenu}
             >
               Causas
+            </a>
+            <a
+              href="#servicos"
+              className="py-2 hover:text-blue-600 transition duration-300"
+              onClick={toggleMenu}
+            >
+              Serviços
             </a>
             <a
               href="#equipe"
@@ -270,7 +285,43 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="equipe" className="py-20 bg-blue-50">
+        <section id="servicos" className="py-20 bg-blue-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-600">
+              Nossos Serviços
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="text-center p-6 hover:shadow-lg transition duration-300 bg-white">
+                <CardContent className="flex flex-col items-center">
+                  <Calendar className="h-12 w-12 text-blue-600 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                    Organização de eventos políticos
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    Realizamos debates, palestras e visitas para comunidades
+                    distantes, promovendo o engajamento político e a
+                    participação cidadã.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6 hover:shadow-lg transition duration-300 bg-white">
+                <CardContent className="flex flex-col items-center">
+                  <BookOpen className="h-12 w-12 text-blue-600 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                    Apoio à educação política
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    Oferecemos oficinas e materiais educativos para ajudar as
+                    pessoas a compreender melhor o funcionamento do sistema
+                    político e as questões que impactam suas vidas.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        <section id="equipe" className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-600">
               Nossa Equipe
