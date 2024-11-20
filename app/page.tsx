@@ -16,10 +16,10 @@ import {
   HandHeart,
 } from "lucide-react";
 import Image from "next/image";
-import fundo from "@/public/assets/povo.jpg";
-import presidente from "@/public/assets/presidente.jpg";
 import diretor from "@/public/assets/diretor.jpg";
 import coordenadora from "@/public/assets/coordenadora.jpg";
+import presidente from "@/public/assets/presidente.jpg";
+import fundo from "@/public/assets/povo.jpg";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -157,7 +157,7 @@ export default function Home() {
                 Juntos, construímos um futuro mais justo, igualitário e
                 sustentável para todos.
               </p>
-              <Button className="bg-white text-blue-600 hover:bg-blue-50 transition duration-300">
+              <Button className="bg-green-500 text-white hover:bg-green-600 transition duration-300">
                 Junte-se a nós
               </Button>
             </div>
@@ -169,9 +169,9 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-blue-600">
               Nossa Missão
             </h2>
-            <p className="text-lg text-justify max-w-3xl mx-auto text-gray-700 leading-relaxed">
-              A Voz do Povo é dedicada a fortalecer a democracia por meio da
-              participação cidadã e do diálogo transparente. Acreditamos no
+            <p className="text-lg text-center max-w-3xl mx-auto text-gray-700 leading-relaxed">
+              A Voz do Povo é dedicada ao fortalecimento da democracia por meio
+              da participação cidadã e do diálogo transparente. Acreditamos no
               poder da coletividade e na necessidade de uma política acessível e
               representativa. Nosso compromisso é construir uma sociedade mais
               justa, inclusiva e consciente, onde todas as vozes sejam ouvidas e
@@ -182,7 +182,7 @@ export default function Home() {
 
         <section id="o-que-fazemos" className="py-20 bg-blue-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-700">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-600">
               O Que Fazemos
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -208,16 +208,14 @@ export default function Home() {
               ].map((atividade, index) => (
                 <Card
                   key={index}
-                  className="hover:shadow-lg transition duration-300 bg-white"
+                  className="text-center p-6 hover:shadow-lg transition duration-300 bg-white"
                 >
-                  <CardContent className="p-6">
-                    <div className="flex flex-col items-center mb-4">
-                      {atividade.icon}
-                      <h3 className="text-xl font-semibold text-blue-700">
-                        {atividade.title}
-                      </h3>
-                    </div>
-                    <p className="text-gray-600 text-justify">
+                  <CardContent className="flex flex-col items-center">
+                    {atividade.icon}
+                    <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                      {atividade.title}
+                    </h3>
+                    <p className="text-gray-600 text-center">
                       {atividade.description}
                     </p>
                   </CardContent>
@@ -229,7 +227,7 @@ export default function Home() {
 
         <section id="causas" className="py-20 bg-green-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-green-600">
               Nossas Principais Causas
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -259,10 +257,10 @@ export default function Home() {
                 >
                   <CardContent className="flex flex-col items-center">
                     {causa.icon}
-                    <h3 className="text-xl font-semibold mb-2 text-green-700">
+                    <h3 className="text-xl font-semibold mb-2 text-green-600">
                       {causa.title}
                     </h3>
-                    <p className="text-gray-600 text-justify">
+                    <p className="text-gray-600 text-center">
                       {causa.description}
                     </p>
                   </CardContent>
@@ -274,13 +272,13 @@ export default function Home() {
 
         <section id="equipe" className="py-20 bg-blue-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-700">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-600">
               Nossa Equipe
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Mario Silva",
+                  name: "Maria Silva",
                   role: "Presidente",
                   image: presidente,
                 },
