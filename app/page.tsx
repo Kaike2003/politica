@@ -113,17 +113,31 @@ export default function Home() {
       )}
 
       <main className="flex-grow">
-        <section className="bg-blue-600 text-white py-24 md:py-32">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Bem-vindo à Política Voz do Povo
-            </h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Unindo vozes, construindo um futuro melhor.
-            </p>
-            <Button className="bg-white text-blue-600 hover:bg-blue-50 transition duration-300">
-              Junte-se a nós
-            </Button>
+        <section className="relative py-24 md:py-32">
+          <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src={require("@/public/assets/povo.jpg")}
+              alt="Background"
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+              className="filter blur-sm"
+            />
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center text-white">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Bem-vindo à União Progressista
+              </h1>
+              <p className="text-xl mb-8 max-w-2xl mx-auto">
+                Juntos, construímos um futuro mais justo, igualitário e
+                sustentável para todos.
+              </p>
+              <Button className="bg-white text-blue-600 hover:bg-blue-50 transition duration-300">
+                Junte-se a nós
+              </Button>
+            </div>
           </div>
         </section>
 
