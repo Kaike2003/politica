@@ -6,6 +6,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Users, Leaf, Scale, Menu, X } from "lucide-react";
+import Image from "next/image";
+import js from "@/public/assets/reactjs.jpg";
+import ts from "@/public/assets/ts.jpg";
+import nest from "@/public/assets/nest.jpg";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -29,7 +33,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center">
             <a href="#" className="text-2xl font-bold">
-              União Progressista
+              Política Voz do Povo
             </a>
             <div className="hidden md:flex space-x-6">
               <a
@@ -112,11 +116,10 @@ export default function Home() {
         <section className="bg-blue-600 text-white py-24 md:py-32">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Bem-vindo à União Progressista
+              Bem-vindo à Política Voz do Povo
             </h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Juntos, construímos um futuro mais justo, igualitário e
-              sustentável para todos.
+              Unindo vozes, construindo um futuro melhor.
             </p>
             <Button className="bg-white text-blue-600 hover:bg-blue-50 transition duration-300">
               Junte-se a nós
@@ -130,11 +133,13 @@ export default function Home() {
               Nossa Missão
             </h2>
             <p className="text-lg text-center max-w-3xl mx-auto text-gray-700 leading-relaxed">
-              A União Progressista está empenhada em criar uma sociedade mais
-              justa, igualitária e sustentável. Acreditamos no poder da ação
-              coletiva e na importância de políticas baseadas em evidências para
-              enfrentar os desafios complexos do nosso tempo, promovendo um
-              futuro melhor para todas as gerações.
+              O Voz do Povo é comprometido em fortalecer a democracia por meio
+              da participação ativa e do diálogo aberto. Acreditamos no poder da
+              coletividade e na importância de tornar a política acessível,
+              transparente e representativa. Nosso objetivo é construir uma
+              sociedade mais inclusiva e consciente, onde cada voz contribua
+              para decisões que impactem positivamente as gerações presentes e
+              futuras.
             </p>
           </div>
         </section>
@@ -147,22 +152,22 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Justiça Social",
+                  title: "Democracia Participativa",
                   icon: <Scale className="h-12 w-12 text-green-600 mb-4" />,
                   description:
-                    "Lutamos por igualdade de oportunidades e direitos para todos os cidadãos, combatendo todas as formas de discriminação.",
+                    "Acreditamos no poder do diálogo e da participação popular para construir uma política mais transparente e representativa.",
                 },
                 {
-                  title: "Sustentabilidade",
+                  title: "Inclusão Social",
                   icon: <Leaf className="h-12 w-12 text-green-600 mb-4" />,
                   description:
-                    "Promovemos políticas ambientais para um futuro sustentável, focando em energias renováveis e conservação.",
+                    "Defendemos ações que promovam igualdade de direitos, oportunidades e respeito às diversidades em todas as suas formas.",
                 },
                 {
-                  title: "Educação para Todos",
+                  title: "Transparência e Acessibilidade",
                   icon: <Users className="h-12 w-12 text-green-600 mb-4" />,
                   description:
-                    "Defendemos o acesso universal à educação de qualidade, investindo no futuro de nossa nação.",
+                    "Trabalhamos para garantir que informações e decisões políticas sejam acessíveis, claras e próximas da população.",
                 },
               ].map((causa, index) => (
                 <Card
@@ -192,17 +197,17 @@ export default function Home() {
                 {
                   name: "Maria Silva",
                   role: "Presidente",
-                  image: "/placeholder.svg?height=200&width=200",
+                  image: ts,
                 },
                 {
                   name: "João Santos",
                   role: "Diretor de Políticas",
-                  image: "/placeholder.svg?height=200&width=200",
+                  image: js,
                 },
                 {
                   name: "Ana Oliveira",
                   role: "Coordenadora de Campanhas",
-                  image: "/placeholder.svg?height=200&width=200",
+                  image: nest,
                 },
               ].map((membro, index) => (
                 <Card
@@ -210,10 +215,10 @@ export default function Home() {
                   className="text-center overflow-hidden hover:shadow-xl transition duration-300 bg-white"
                 >
                   <CardContent className="p-0">
-                    <img
+                    <Image
                       src={membro.image}
                       alt={membro.name}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-56 object-cover"
                     />
                     <div className="p-6">
                       <h3 className="text-xl font-semibold text-blue-600">
