@@ -127,17 +127,17 @@ export default function Home() {
                 {
                   name: "Maria Silva",
                   role: "Presidente",
-                  image: "/placeholder.svg?height=150&width=150",
+                  image: "https://picsum.photos/800/800?blur=2",
                 },
                 {
                   name: "João Santos",
                   role: "Diretor de Políticas",
-                  image: "/placeholder.svg?height=150&width=150",
+                  image: "https://picsum.photos/800/800?blur=2",
                 },
                 {
                   name: "Ana Oliveira",
                   role: "Coordenadora de Campanhas",
-                  image: "/placeholder.svg?height=150&width=150",
+                  image: "https://picsum.photos/800/800?blur=2",
                 },
               ].map((membro, index) => (
                 <Card key={index} className="text-center">
