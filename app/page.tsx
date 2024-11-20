@@ -5,7 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Users, Leaf, Scale, Menu, X } from "lucide-react";
+import {
+  Users,
+  Leaf,
+  Scale,
+  Menu,
+  X,
+  Megaphone,
+  FileText,
+  HandHeart,
+} from "lucide-react";
 import Image from "next/image";
 import js from "@/public/assets/reactjs.jpg";
 import ts from "@/public/assets/ts.jpg";
@@ -42,6 +51,12 @@ export default function Home() {
                 className="hover:text-blue-200 transition duration-300"
               >
                 Sobre
+              </a>
+              <a
+                href="#o-que-fazemos"
+                className="hover:text-blue-200 transition duration-300"
+              >
+                O Que Fazemos
               </a>
               <a
                 href="#causas"
@@ -89,6 +104,13 @@ export default function Home() {
               Sobre
             </a>
             <a
+              href="#o-que-fazemos"
+              className="py-2 hover:text-blue-600 transition duration-300"
+              onClick={toggleMenu}
+            >
+              O Que Fazemos
+            </a>
+            <a
               href="#causas"
               className="py-2 hover:text-blue-600 transition duration-300"
               onClick={toggleMenu}
@@ -129,7 +151,7 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center text-white">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Bem-vindo à União Progressista
+                Bem-vindo à Política Voz do Povo
               </h1>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
                 Juntos, construímos um futuro mais justo, igualitário e
@@ -147,15 +169,61 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-blue-600">
               Nossa Missão
             </h2>
-            <p className="text-lg text-center max-w-3xl mx-auto text-gray-700 leading-relaxed">
-              O Voz do Povo é comprometido em fortalecer a democracia por meio
-              da participação ativa e do diálogo aberto. Acreditamos no poder da
-              coletividade e na importância de tornar a política acessível,
-              transparente e representativa. Nosso objetivo é construir uma
-              sociedade mais inclusiva e consciente, onde cada voz contribua
-              para decisões que impactem positivamente as gerações presentes e
-              futuras.
+            <p className="text-lg text-justify max-w-3xl mx-auto text-gray-700 leading-relaxed">
+              A Voz do Povo é dedicada a fortalecer a democracia por meio da
+              participação cidadã e do diálogo transparente. Acreditamos no
+              poder da coletividade e na necessidade de uma política acessível e
+              representativa. Nosso compromisso é construir uma sociedade mais
+              justa, inclusiva e consciente, onde todas as vozes sejam ouvidas e
+              contribuam para um futuro melhor para todos.
             </p>
+          </div>
+        </section>
+
+        <section id="o-que-fazemos" className="py-20 bg-blue-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-700">
+              O Que Fazemos
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Educação Política",
+                  icon: <FileText className="h-12 w-12 text-blue-600 mb-4" />,
+                  description:
+                    "Promovemos workshops, seminários e materiais educativos para aumentar a compreensão dos cidadãos sobre o processo político e seus direitos.",
+                },
+                {
+                  title: "Mobilização Comunitária",
+                  icon: <Megaphone className="h-12 w-12 text-blue-600 mb-4" />,
+                  description:
+                    "Organizamos eventos e campanhas para engajar a comunidade em questões locais e nacionais, incentivando a participação ativa na política.",
+                },
+                {
+                  title: "Advocacy",
+                  icon: <HandHeart className="h-12 w-12 text-blue-600 mb-4" />,
+                  description:
+                    "Trabalhamos com legisladores e formuladores de políticas para promover leis e políticas que reflitam as necessidades e aspirações dos cidadãos.",
+                },
+              ].map((atividade, index) => (
+                <Card
+                  key={index}
+                  className="hover:shadow-lg transition duration-300 bg-white"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex flex-col items-center mb-4">
+                      {atividade.icon}
+                      <h3 className="text-xl font-semibold text-blue-700">
+                        {atividade.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 text-justify">
+                      {atividade.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -194,7 +262,9 @@ export default function Home() {
                     <h3 className="text-xl font-semibold mb-2 text-green-700">
                       {causa.title}
                     </h3>
-                    <p className="text-gray-600">{causa.description}</p>
+                    <p className="text-gray-600 text-justify">
+                      {causa.description}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -299,7 +369,7 @@ export default function Home() {
 
       <footer className="bg-blue-800 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 União Progressista. Todos os direitos reservados.</p>
+          <p>&copy; 2024 Política Voz do Povo. Todos os direitos reservados.</p>
           <div className="mt-4 space-x-4">
             <a href="#" className="hover:text-blue-300 transition duration-300">
               Política de Privacidade
