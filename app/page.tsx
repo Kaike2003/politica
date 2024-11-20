@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Users, Leaf, Scale, Building, Send, Menu, X } from "lucide-react";
+import { Users, Leaf, Scale, Menu, X } from "lucide-react";
 
 export default function Home() {
   const [name, setName] = useState("");
