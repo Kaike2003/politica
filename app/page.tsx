@@ -20,6 +20,9 @@ import js from "@/public/assets/reactjs.jpg";
 import ts from "@/public/assets/ts.jpg";
 import nest from "@/public/assets/nest.jpg";
 import fundo from "@/public/assets/povo.jpg";
+import presidente from "@/public/assets/presidente.jpg";
+import diretor from "@/public/assets/diretor.jpg";
+import coordenadora from "@/public/assets/coordenadora.jpg";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -280,19 +283,19 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Maria Silva",
+                  name: "Mario Silva",
                   role: "Presidente",
-                  image: ts,
+                  image: presidente,
                 },
                 {
                   name: "João Santos",
                   role: "Diretor de Políticas",
-                  image: js,
+                  image: diretor,
                 },
                 {
                   name: "Ana Oliveira",
                   role: "Coordenadora de Campanhas",
-                  image: nest,
+                  image: coordenadora,
                 },
               ].map((membro, index) => (
                 <Card
@@ -303,7 +306,7 @@ export default function Home() {
                     <Image
                       src={membro.image}
                       alt={membro.name}
-                      className="w-full h-56 object-cover"
+                      className="w-full h-96 object-cover"
                     />
                     <div className="p-6">
                       <h3 className="text-xl font-semibold text-blue-600">
