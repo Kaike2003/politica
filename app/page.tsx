@@ -55,12 +55,6 @@ export default function Home() {
                 Sobre
               </a>
               <a
-                href="#o-que-fazemos"
-                className="hover:text-blue-200 transition duration-300"
-              >
-                O Que Fazemos
-              </a>
-              <a
                 href="#causas"
                 className="hover:text-blue-200 transition duration-300"
               >
@@ -110,13 +104,6 @@ export default function Home() {
               onClick={toggleMenu}
             >
               Sobre
-            </a>
-            <a
-              href="#o-que-fazemos"
-              className="py-2 hover:text-blue-600 transition duration-300"
-              onClick={toggleMenu}
-            >
-              O Que Fazemos
             </a>
             <a
               href="#causas"
@@ -169,8 +156,7 @@ export default function Home() {
                 Bem-vindo à Política Voz do Povo
               </h1>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
-                Juntos, construímos um futuro mais justo, igualitário e
-                sustentável para todos.
+                Juntos, construímos um futuro mais justo, acolhedor e sustentável para todos.
               </p>
               <Button className="bg-green-500 text-white hover:bg-green-600 transition duration-300">
                 Junte-se a nós
@@ -192,51 +178,6 @@ export default function Home() {
               justa, inclusiva e consciente, onde todas as vozes sejam ouvidas e
               contribuam para um futuro melhor para todos.
             </p>
-          </div>
-        </section>
-
-        <section id="o-que-fazemos" className="py-20 bg-blue-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-600">
-              O Que Fazemos
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Educação Política",
-                  icon: <FileText className="h-12 w-12 text-blue-600 mb-4" />,
-                  description:
-                    "Promovemos workshops, seminários e materiais educativos para aumentar a compreensão dos cidadãos sobre o processo político e seus direitos.",
-                },
-                {
-                  title: "Mobilização Comunitária",
-                  icon: <Megaphone className="h-12 w-12 text-blue-600 mb-4" />,
-                  description:
-                    "Organizamos eventos e campanhas para engajar a comunidade em questões locais e nacionais, incentivando a participação ativa na política.",
-                },
-                {
-                  title: "Advocacy",
-                  icon: <HandHeart className="h-12 w-12 text-blue-600 mb-4" />,
-                  description:
-                    "Trabalhamos com legisladores e formuladores de políticas para promover leis e políticas que reflitam as necessidades e aspirações dos cidadãos.",
-                },
-              ].map((atividade, index) => (
-                <Card
-                  key={index}
-                  className="text-center p-6 hover:shadow-lg transition duration-300 bg-white"
-                >
-                  <CardContent className="flex flex-col items-center">
-                    {atividade.icon}
-                    <h3 className="text-xl font-semibold mb-2 text-blue-600">
-                      {atividade.title}
-                    </h3>
-                    <p className="text-gray-600 text-center">
-                      {atividade.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -290,7 +231,40 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-600">
               Nossos Serviços
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="text-center p-6 hover:shadow-lg transition duration-300 bg-white">
+                <CardContent className="flex flex-col items-center">
+                  <FileText className="h-12 w-12 text-blue-600 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                    Educação Política
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    Promovemos workshops, seminários e materiais educativos para aumentar a compreensão dos cidadãos sobre o processo político e seus direitos.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6 hover:shadow-lg transition duration-300 bg-white">
+                <CardContent className="flex flex-col items-center">
+                  <Megaphone className="h-12 w-12 text-blue-600 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                    Mobilização Comunitária
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    Organizamos eventos e campanhas para engajar a comunidade em questões locais e nacionais, incentivando a participação ativa na política.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="text-center p-6 hover:shadow-lg transition duration-300 bg-white">
+                <CardContent className="flex flex-col items-center">
+                  <HandHeart className="h-12 w-12 text-blue-600 mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                    Advocacy
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    Trabalhamos com legisladores e formuladores de políticas para promover leis e políticas que reflitam as necessidades e aspirações dos cidadãos.
+                  </p>
+                </CardContent>
+              </Card>
               <Card className="text-center p-6 hover:shadow-lg transition duration-300 bg-white">
                 <CardContent className="flex flex-col items-center">
                   <Calendar className="h-12 w-12 text-blue-600 mb-4" />
@@ -334,7 +308,7 @@ export default function Home() {
                   image: presidente,
                 },
                 {
-                  name: "João Santos",
+                  name: "Gianni Freire",
                   role: "Diretor de Políticas",
                   image: diretor,
                 },
@@ -378,7 +352,8 @@ export default function Home() {
             >
               <div className="mb-4">
                 <Input
-                  type="text"
+                  type
+="text"
                   placeholder="Seu nome"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -432,3 +407,4 @@ export default function Home() {
     </div>
   );
 }
+
